@@ -1,5 +1,6 @@
+// index.js
 import { useEffect, useState } from 'react'
-import { getMarkdownContent } from '../utils/markdown'  // インポートのパスを確認
+import getMarkdownContent from '../utils/markdown'  // ✅ 修正: デフォルトエクスポートをインポート
 
 export default function Home({ content }) {
   const [isVisible, setIsVisible] = useState(false)
@@ -25,7 +26,7 @@ export default function Home({ content }) {
 }
 
 export async function getStaticProps() {
-  const markdownContent = await getMarkdownContent()
+  const markdownContent = await getMarkdownContent()  // ✅ 修正: デフォルトエクスポートで呼び出し
 
   return {
     props: {

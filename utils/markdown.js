@@ -1,3 +1,4 @@
+// markdown.js
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
@@ -6,7 +7,7 @@ import remarkHtml from 'remark-html'
 
 const markdownFilePath = path.join(process.cwd(), 'content', 'module.md')
 
-export async function getMarkdownContent() {
+async function getMarkdownContent() {
   const fileContents = fs.readFileSync(markdownFilePath, 'utf8')
   const { content } = matter(fileContents)
 
@@ -16,3 +17,6 @@ export async function getMarkdownContent() {
 
   return htmlContent.toString()
 }
+
+// ✅ デフォルトエクスポートに変更
+export default getMarkdownContent
