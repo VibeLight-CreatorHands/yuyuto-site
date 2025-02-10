@@ -1,4 +1,4 @@
-import '../styles/global.css'; // グローバルCSSの読み込み
+import '../styles/globals.css'; // グローバルCSSの読み込み
 import Head from 'next/head'; // Headタグを使うためにインポート
 
 // _app.js でページごとのプロパティや設定を定義
