@@ -12,11 +12,18 @@ html, body {
   background-size: 400% 400%;
   animation: gradientFlow 10s ease infinite;
 
-  /* 中央揃え */
+  /* 横方向は中央揃え、上下方向はmarginで調整 */
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;  /* 上寄せに変更 */
   flex-direction: column;
+  padding: 0 20px; /* 横方向に少し余白を追加 */
+}
+
+/* 上下方向の余白を調整するために、全体の上下にマージンを追加 */
+body {
+  margin-top: 50px;  /* 上方向の余白（数値調整可能） */
+  margin-bottom: 50px;  /* 下方向の余白（数値調整可能） */
 }
 
 @keyframes gradientFlow {
