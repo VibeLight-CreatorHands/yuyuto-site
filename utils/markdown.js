@@ -4,7 +4,7 @@ import matter from 'gray-matter'
 import remark from 'remark'
 import remarkHtml from 'remark-html'
 
-const markdownFilePath = path.join(process.cwd(), 'content', 'example.md')
+const markdownFilePath = path.join(process.cwd(), 'content', 'module.md')
 
 export async function getMarkdownContent() {
   // fs モジュールをサーバーサイドでのみ実行
