@@ -4,7 +4,7 @@
   "description": "サイト",
   "main": "index.js",
   "scripts": {
-    "build": "next build",
+    "build": "next build && next export",
     "export": "next export",
     "deploy": "gh-pages -d out"
   },
