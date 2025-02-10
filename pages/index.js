@@ -22,8 +22,19 @@ return (
    </section>
    {/* ボタン */}
    <div style={{ textAlign: 'center', marginTop: '20px' }}>
-     <button onClick={toggleBubble}>吹き出しを表示</button>
-   </div>
+     <button 
+     onClick={toggleBubble}
+     style={{
+      backgroundColor: '#28a745',
+      color: '#fff',
+      border: 'none',
+      borderRadius: '5px',
+      padding: '10px 20px',
+      cursor: 'pointer',
+     }}
+   > {isVisible ? '吹き出しを非表示' : '吹き出しを表示'}
+   </button>
+ </div>
 
    {/* 吹き出し */}
    <Bubble visible={isVisible}>
