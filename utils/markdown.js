@@ -7,7 +7,6 @@ import remarkHtml from 'remark-html'
 const markdownFilePath = path.join(process.cwd(), 'content', 'module.md')
 
 export async function getMarkdownContent() {
-  // fs モジュールをサーバーサイドでのみ実行
   const fileContents = fs.readFileSync(markdownFilePath, 'utf8')
   const { content } = matter(fileContents)
 

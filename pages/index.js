@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react'
-import { getMarkdownContent } from '../utils/markdown'
+import { getMarkdownContent } from '../utils/markdown'  // インポートのパスを確認
 
 export default function Home({ content }) {
-  const [isVisible, setIsVisible] = useState(false)  // 吹き出しの表示・非表示
+  const [isVisible, setIsVisible] = useState(false)
 
-  // ボタンがクリックされたときのハンドラー
   const toggleBubble = () => {
-    setIsVisible(prevState => !prevState)  // 表示状態を反転
+    setIsVisible(prevState => !prevState)
   }
 
   return (
@@ -25,7 +24,6 @@ export default function Home({ content }) {
   )
 }
 
-// getStaticProps は静的生成時にマークダウンコンテンツを取得します
 export async function getStaticProps() {
   const markdownContent = await getMarkdownContent()
 
