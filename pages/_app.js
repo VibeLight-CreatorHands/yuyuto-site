@@ -1,20 +1,18 @@
-import '../styles/globals.css'; // グローバルCSSの読み込み
-import Head from 'next/head'; // Headタグを使うためにインポート
+// pages/_app.js
+import '../styles/globals.css';
+import Head from 'next/head';
 
-// _app.js でページごとのプロパティや設定を定義
 function MyApp({ Component, pageProps }) {
   return (
-    <>
-      <Head>
-        <title>My Next.js Project</title> {/* ページのタイトル */}
-        <meta name="description" content="My Next.js application" /> {/* メタデータ */}
-        <link rel="icon" href="/favicon.ico" /> {/* Favicon */}
-      </Head>
-      
-      {/* ページコンポーネントをレンダリング */}
-      <Component {...pageProps} />
-    </>
-  );
+   <>
+   <Head>
+    <title>YuyutoSite</title>
+    <meta name="description" content="My Next.js application" />
+    <link rel="icon" href="/favicon.ico" />
+   </Head>
+   <Component {...pageProps} />
+   </>
+ )
 }
 
 export default MyApp;
