@@ -1,0 +1,36 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # main ブランチに push されたときにトリガー
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # リポジトリのクローン
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Node.js のセットアップ
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'  # 任意のバージョンを指定
+
+      # 依存関係のインストール
+      - name: Install dependencies
+        run: npm install
+
+      # Next.js を静的サイトとしてビルド
+      - name: Build Next.js
+        run: npm run build && npm run export
+
+      # GitHub Pages へデプロイ
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out  # 出力先ディレクトリ

@@ -4,7 +4,9 @@
   "description": "サイト",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "next build",
+    "export": "next export",
+    "deploy": "gh-pages -d out"
   },
   "keywords": [],
   "author": "",
@@ -17,5 +19,8 @@
     "react-dom": "^18.2.0",
     "remark": "^15.0.1",
     "remark-html": "^16.0.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }

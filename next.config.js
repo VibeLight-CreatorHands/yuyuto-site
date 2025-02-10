@@ -12,4 +12,6 @@ module.exports = {
 
     return config
   },
+  output: 'export',
+  distDir: 'out', // GitHub Pages にデプロイするための出力先ディレクトリ
 }
