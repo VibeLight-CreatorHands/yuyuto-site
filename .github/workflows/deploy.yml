@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main  # main ブランチに push されたときにトリガー
+permissions:
+  contents: write
 
 jobs:
   build:
