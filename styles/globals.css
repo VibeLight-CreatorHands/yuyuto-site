@@ -157,3 +157,20 @@ section {
       margin-top: 80px; /* スマホ用の微調整 */
   }
 }
+
+/* Markdown専用スタイル */
+.markdown-content h1 {
+ font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.markdown-content ul {
+ padding-left: 1.5rem;
+ list-style-type: disc;
+}
+
+.markdown-content li {
+ font-size: 1.2rem;
+ margin-bottom: 0.5rem;
+}
