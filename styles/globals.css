@@ -1,0 +1,147 @@
+/* リセットと基本設定 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(-45deg, #00aaff, #0044cc, #003366, #001f33);
+    background-size: 400% 400%;
+    animation: gradientFlow 10s ease infinite;
+  }
+  
+  @keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* フェードインアニメーション */
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+  }
+  
+  /* ヘッダー */
+  header {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  /* タイトルアニメーション */
+  h1, h2 {
+    font-family: 'Arial', sans-serif;
+    color: #4CAF50;
+    opacity: 0;
+    animation: fadeIn 3s ease-out forwards;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    animation-delay: 1s;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    animation-delay: 2s;
+  }
+  
+  /* ボタンのスタイル */
+  button {
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  button:hover {
+    transform: translateY(-3px) scale(1.05);
+    background-color: #45a049;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* 吹き出しスタイル */
+  .bubble {
+    display: none;
+    position: relative;
+    background: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 300px;
+    margin-top: 10px;
+    animation: fadeIn 0.5s ease-in-out forwards;
+    transition: opacity 0.3s ease;
+  }
+  
+  .bubble.show {
+    display: block;
+    opacity: 1;
+  }
+  
+  .bubble.hide {
+    display: none;
+    opacity: 0;
+  }
+  
+  /* セクションのスタイル */
+  section {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    max-width: 80%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards;
+  }
+  
+  /* メディアクエリ：モバイル用 */
+  @media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+    section {
+        width: 100%;
+        padding: 15px 15px 15px 18px;
+    }
+  }
+  
+  /* メディアクエリ：小型デバイス用（スマホ） */
+  @media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+    button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+    section {
+        width: 100%;
+        padding: 10px 10px 10px 18px;
+    }
+  }
