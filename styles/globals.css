@@ -12,18 +12,11 @@ html, body {
   background-size: 400% 400%;
   animation: gradientFlow 10s ease infinite;
 
-  /* 横方向は中央揃え、上下方向はmarginで調整 */
+  /* 左右中央揃え */
   display: flex;
   justify-content: center;
-  align-items: flex-start;  /* 上寄せに変更 */
+  align-items: flex-start; /* 上端揃えに変更 */
   flex-direction: column;
-  padding: 0 20px; /* 横方向に少し余白を追加 */
-}
-
-/* 上下方向の余白を調整するために、全体の上下にマージンを追加 */
-body {
-  margin-top: 50px;  /* 上方向の余白（数値調整可能） */
-  margin-bottom: 50px;  /* 下方向の余白（数値調整可能） */
 }
 
 @keyframes gradientFlow {
@@ -122,6 +115,7 @@ section {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   opacity: 0;
   animation: fadeIn 2s ease-out forwards;
+  margin-top: 150px; /* 上下位置の調整（例として150px） */
 }
 
 /* メディアクエリ：モバイル用 */
@@ -139,6 +133,7 @@ section {
   section {
       width: 100%;
       padding: 15px 15px 15px 18px;
+      margin-top: 100px; /* モバイル用で上下位置を調整 */
   }
 }
 
@@ -157,5 +152,6 @@ section {
   section {
       width: 100%;
       padding: 10px 10px 10px 18px;
+      margin-top: 80px; /* スマホ用の微調整 */
   }
 }
