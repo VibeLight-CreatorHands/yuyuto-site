@@ -1,6 +1,5 @@
-// index.js
 import { useEffect, useState } from 'react'
-import getMarkdownContent from '../utils/markdown'  // ✅ 修正: デフォルトエクスポートをインポート
+import getMarkdownContent from '../utils/markdown'  
 
 export default function Home({ content }) {
   const [isVisible, setIsVisible] = useState(false)
@@ -25,12 +24,25 @@ export default function Home({ content }) {
   )
 }
 
+// ✅ `getStaticProps` のエラーを防ぐために、`console.log` を追加
 export async function getStaticProps() {
-  const markdownContent = await getMarkdownContent()  // ✅ 修正: デフォルトエクスポートで呼び出し
+  console.log('🔄 getStaticProps が実行されました')
 
-  return {
-    props: {
-      content: markdownContent || 'No content found',
-    },
+  try {
+    const markdownContent = await getMarkdownContent()
+    console.log('✅ Markdown Content:', markdownContent)
+
+    return {
+      props: {
+        content: markdownContent || 'No content found',
+      },
+    }
+  } catch (error) {
+    console.error('🚨 getStaticProps でエラー:', error)
+    return {
+      props: {
+        content: 'Error loading content',
+      },
+    }
   }
 }
