@@ -13,8 +13,8 @@ setIsVisible(prev => !prev);
 return (
  <div>
     <header>
-      <h1>Welcome to the Yuyuto Site</h1>
-      <h2>Dynamic Markdown Rendering & Bubble Display</h2>
+      <h1>Elium.comへようこそ!</h1>
+      <h2>ただいまプロジェクトα版Ver1.0!</h2>
     </header>
    {/* Markdownコンテンツの表示 */}
    <section>
