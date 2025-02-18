@@ -104,11 +104,11 @@ button:hover {
 /* セクションのスタイル */
 section {
   padding: 20px;
-  background-color: rgb(255, 0, 0);
+  background-color: rgba(255, 255, 255, 0.726);
   border-radius: 10px;
   max-width: 800px; /* 最大幅を設定 */
   width: 100%;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0);
   opacity: 0;
   animation: fadeIn 2s ease-out forwards;
 
