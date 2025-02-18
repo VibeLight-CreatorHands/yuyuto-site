@@ -14,7 +14,7 @@ if (!visible) return null;
     backgroundColor: '#fff',
     padding: '10px 20px',
     borderRadius: '10px',
-    boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
+    boxShadow: '0px 4px 10px rgb(0, 0, 0)',
     zIndex: 1000,
     transition: 'opacity 0.3s ease', 
     opacity: visible ? 1 : 0,
