@@ -108,7 +108,7 @@ section {
   border-radius: 10px;
   max-width: 800px; /* 最大幅を設定 */
   width: 100%;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.178);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.199);
   opacity: 0;
   animation: fadeIn 2s ease-out forwards;
 
@@ -167,7 +167,6 @@ section {
 
 .markdown-content ul {
  padding-left: 1.5rem;
- color: currentColor;
  list-style-type: disc;
 }
 
