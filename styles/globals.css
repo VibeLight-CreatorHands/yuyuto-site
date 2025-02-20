@@ -8,11 +8,10 @@
 html, body {
   height: 100%;
   font-family: Arial, sans-serif;
-  background: linear-gradient(-45deg, #001aff, #0055ff, #0080ff, #0099ff, #00b2ff, #00ccff,  #00e5ff, #00ffff);
+  background: linear-gradient(-45deg, #001aff, #0055ff, #0080ff, #0099ff, #00b2ff, #00ccff, #00e5ff, #00ffff);
   background-size: 400% 400%;
   animation: gradientFlow 10s ease infinite;
 
-  /* bodyにはflexboxを適用せず、通常の流れに */
   display: block;
 }
 
@@ -69,6 +68,7 @@ button {
   cursor: pointer;
   transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative; /* 吹き出しの位置調整用に追加 */
 }
 
 button:hover {
@@ -80,15 +80,29 @@ button:hover {
 /* 吹き出しスタイル */
 .bubble {
   display: none;
-  position: relative;
+  position: absolute; /* ボタンに対する絶対位置 */
+  bottom: calc(100% + 10px); /* ボタンの上に10pxの余白を追加 */
+  left: 50%; /* ボタンの中央揃え */
+  transform: translateX(-50%);
   background: #9900ff;
-  color: blue;
+  color: white;
   padding: 10px;
   border-radius: 10px;
   max-width: 300px;
-  margin-top: 10px;
   animation: fadeIn 0.5s ease-in-out forwards;
   transition: opacity 0.3s ease;
+  z-index: 10; /* ボタンより前面に表示 */
+}
+
+.bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -10px; /* ボタンに近づけるため調整 */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 10px;
+  border-style: solid;
+  border-color: #9900ff transparent transparent transparent; /* 吹き出しの三角形 */
 }
 
 .bubble.show {
@@ -106,18 +120,14 @@ section {
   padding: 20px;
   background-color: #b3b3b3;
   border-radius: 10px;
-  max-width: 800px; /* 最大幅を設定 */
+  max-width: 800px;
   width: 100%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.199);
   opacity: 0;
   animation: fadeIn 2s ease-out forwards;
-
-  /* 中央揃えを設定 */
-  margin-left: auto;  /* 左右中央 */
+  margin-left: auto;
   margin-right: auto;
-
-  /* 上下位置の調整 */
-  margin-top: 150px;  /* 上に150px調整 */
+  margin-top: 150px;
 }
 
 /* メディアクエリ：モバイル用 */
@@ -135,7 +145,7 @@ section {
   section {
       width: 100%;
       padding: 15px;
-      margin-top: 100px; /* モバイル用で上下位置を調整 */
+      margin-top: 100px;
   }
 }
 
@@ -154,7 +164,7 @@ section {
   section {
       width: 100%;
       padding: 10px;
-      margin-top: 80px; /* スマホ用の微調整 */
+      margin-top: 80px;
   }
 }
 

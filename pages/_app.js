@@ -6,8 +6,8 @@ function MyApp({ Component, pageProps }) {
   return (
    <>
    <Head>
-    <title>YuyutoSite</title>
-    <meta name="description" content="My Next.js application" />
+    <title>Elium.com</title>
+    <meta name="description" content="Elium's official site" />
     <link rel="icon" href="/favicon.ico" />
    </Head>
    <Component {...pageProps} />
